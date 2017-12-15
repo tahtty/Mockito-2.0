@@ -21,7 +21,7 @@ public class Multiplicacion {
 			for(int i=0;i<multiplicador;i++) {
 				//this.resultado=suma.sumar(this.resultado,multiplicando);
 			}
-			//this.resultado=suma.sumar(this.resultado,-1);
+			//this.resultado=resta.restar(0,this.resultado);
 		}
 		else {
 			for(int i=0;i<multiplicador;i++) {
