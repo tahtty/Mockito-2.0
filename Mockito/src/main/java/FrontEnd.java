@@ -16,33 +16,47 @@ public class FrontEnd {
 		do {
 			sc= new Scanner(System.in);
 			opcionS = sc.nextLine();
-			if(FrontEnd.isNumeric(opcionS)) {
-				opcion= Integer.parseInt(opcionS);
-				switch(opcion) {
-				case 1:
-					resultado =0;//Igualo a la suma
-					System.out.println("El resultado es: "+String.valueOf(resultado));
-					bandera=false;
-					break;
-				case 2:
-					resultado =0;//Igualo a la multiplicación
-					System.out.println("El resultado es: "+String.valueOf(resultado));
-					bandera=false;
-					break;
-				case 3:
-					resultado =0;//Igualo a la resta
-					System.out.println("El resultado es: "+String.valueOf(resultado));
-					bandera=false;
-					break;
-				default:
-					System.out.println("Ingrese una opción válida");
-					break;
-				}
-			}
+			bandera = FrontEnd.menu(opcionS);
+			
 		}while(bandera);
 		
 	}
-	 
+	
+	private static boolean menu(String opcionS, numero1, numer) {
+		int opcion;
+		int resultado;
+		boolean bandera;
+		if(FrontEnd.isNumeric(opcionS)) {
+			opcion= Integer.parseInt(opcionS);
+			switch(opcion) {
+			case 1:
+				resultado =0;//Igualo a la suma
+				System.out.println("El resultado es: "+String.valueOf(resultado));
+				bandera=false;
+				break;
+			case 2:
+				resultado =0;//Igualo a la multiplicación
+				System.out.println("El resultado es: "+String.valueOf(resultado));
+				bandera=false;
+				break;
+			case 3:
+				resultado =0;//Igualo a la resta
+				System.out.println("El resultado es: "+String.valueOf(resultado));
+				bandera=false;
+				break;
+			default:
+				System.out.println("Ingrese una opción válida");
+				bandera = true;
+				break;
+			}
+			return bandera;
+		}else {
+			return true;
+		}
+		
+		
+	}
+	
 	private static boolean isNumeric(String cadena){
 		try {
 			Integer.parseInt(cadena);
