@@ -22,14 +22,17 @@ public class FrontEnd {
 				case 1:
 					resultado =0;//Igualo a la suma
 					System.out.println("El resultado es: "+String.valueOf(resultado));
+					bandera=false;
 					break;
 				case 2:
 					resultado =0;//Igualo a la multiplicación
 					System.out.println("El resultado es: "+String.valueOf(resultado));
+					bandera=false;
 					break;
 				case 3:
 					resultado =0;//Igualo a la resta
 					System.out.println("El resultado es: "+String.valueOf(resultado));
+					bandera=false;
 					break;
 				default:
 					System.out.println("Ingrese una opción válida");
