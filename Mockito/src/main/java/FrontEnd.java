@@ -2,62 +2,47 @@ import java.util.Scanner;
 public class FrontEnd {
 
 	public static void main(String[] args) {
-		String opcionS;
-		int opcion;
-		int resultado;
-		Scanner sc;
-		boolean bandera=true;
-		// TODO Auto-generated method stub
-		System.out.println("Calculadora");
-		System.out.println("Escoja una operación");
-		System.out.println("1) Suma");
-		System.out.println("2) Multiplicación");
-		System.out.println("3) Resta");
-		do {
-			sc= new Scanner(System.in);
-			opcionS = sc.nextLine();
-			bandera = FrontEnd.menu(opcionS);
-			
-		}while(bandera);
+            Scanner sc;
+            boolean v1;
+            String opS;
+            int op;
+            int num1;
+            int num2;
+            System.out.println("Calculadora");
+            do{
+                do{
+                    System.out.println("Ingrese la operaciÃ³n que desea realizar");
+                    System.out.println("1) Suma");
+                    System.out.println("2) MultiplicaciÃ³n");
+                    System.out.println("3) Resta");
+                    sc = new Scanner(System.in);
+                    opS = sc.nextLine();
+                    v1= FrontEnd.isNumeric(opS);
+                }while(!v1);
+                v1=true;
+                op=Integer.parseInt(opS);
+                v1=isInRange(op,0,4);
+            }while(!v1);
+            do{
+                System.out.println("Ingrese el primer nÃºmero:");
+                sc = new Scanner(System.in);
+                opS = sc.nextLine();
+                v1= FrontEnd.isNumeric(opS);
+                num1=Integer.parseInt(opS);
+            }while(!v1);
+            do{
+                System.out.println("Ingrese el segundo nÃºmero:");
+                sc = new Scanner(System.in);
+                opS = sc.nextLine();
+                v1= FrontEnd.isNumeric(opS);
+                num2=Integer.parseInt(opS);
+            }while(!v1);
+            int resultado=FrontEnd.calcular(op, num1, num2);
+            System.out.println("El resultado es: "+resultado);
+        }
 		
-	}
 	
-	private static boolean menu(String opcionS, numero1, numer) {
-		int opcion;
-		int resultado;
-		boolean bandera;
-		if(FrontEnd.isNumeric(opcionS)) {
-			opcion= Integer.parseInt(opcionS);
-			switch(opcion) {
-			case 1:
-				resultado =0;//Igualo a la suma
-				System.out.println("El resultado es: "+String.valueOf(resultado));
-				bandera=false;
-				break;
-			case 2:
-				resultado =0;//Igualo a la multiplicación
-				System.out.println("El resultado es: "+String.valueOf(resultado));
-				bandera=false;
-				break;
-			case 3:
-				resultado =0;//Igualo a la resta
-				System.out.println("El resultado es: "+String.valueOf(resultado));
-				bandera=false;
-				break;
-			default:
-				System.out.println("Ingrese una opción válida");
-				bandera = true;
-				break;
-			}
-			return bandera;
-		}else {
-			return true;
-		}
-		
-		
-	}
-	
-	private static boolean isNumeric(String cadena){
+	public static boolean isNumeric(String cadena){
 		try {
 			Integer.parseInt(cadena);
 			return true;
@@ -65,5 +50,24 @@ public class FrontEnd {
 			return false;
 		}
 	}
-
+        public static boolean isInRange(int num, int inicio, int fin){
+            return(num>inicio&&num<fin);
+        }
+        public static int calcular(int op, int num1, int num2){
+            int resultado =0;
+            switch (op){
+                case 1:
+                    //Suma
+                    break;
+                case 2:
+                    //MultiplicaciÃ³n
+                    break;
+                case 3:
+                    //Resta
+                    break;
+                default:
+                    break;
+            }
+            return resultado;
+        }
 }
