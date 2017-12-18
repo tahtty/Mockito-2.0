@@ -1,4 +1,6 @@
 import java.util.Scanner;
+//import static org.mockito.Mockito.*;
+//Suma mockedSuma = mock(Suma.class);
 public class FrontEnd {
 
 	public static void main(String[] args) {
