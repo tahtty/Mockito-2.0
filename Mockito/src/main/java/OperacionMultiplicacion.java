@@ -8,6 +8,7 @@
  *
  * @author Carlos Leon
  */
-public interface Operacion {
-    public int operar(int operador1, int operador2);
+public interface OperacionMultiplicacion {
+    public int multiplicar(int multiplicando, int multiplicador);
 }
+
