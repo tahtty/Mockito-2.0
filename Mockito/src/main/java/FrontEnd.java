@@ -2,6 +2,21 @@ import java.util.Scanner;
 //import static org.mockito.Mockito.*;
 //Suma mockedSuma = mock(Suma.class);
 public class FrontEnd {
+        static OperacionSuma suma ;
+        static OperacionMultiplicacion multiplicacion;
+        static OperacionResta resta;
+
+        public static void setSuma(OperacionSuma suma) {
+            FrontEnd.suma = suma;
+        }
+
+        public static void setMultiplicacion(OperacionMultiplicacion multiplicacion) {
+            FrontEnd.multiplicacion = multiplicacion;
+        }
+
+        public static void setResta(OperacionResta resta) {
+            FrontEnd.resta = resta;
+        }
 
 	public static void main(String[] args) {
             Scanner sc;
@@ -55,19 +70,21 @@ public class FrontEnd {
         public static boolean isInRange(int num, int inicio, int fin){
             return(num>inicio&&num<fin);
         }
+
         public static int calcular(int op, int num1, int num2){
             int resultado =0;
             switch (op){
                 case 1:
-                    //Suma
+                    resultado = suma.sumar(num1, num2);
                     break;
                 case 2:
-                    //Multiplicación
+                    resultado = multiplicacion.multiplicar(num1, num2);
                     break;
                 case 3:
-                    //Resta
+                    resultado = resta.restar(num1, num2);
                     break;
                 default:
+                	resultado = -1;
                     break;
             }
             return resultado;

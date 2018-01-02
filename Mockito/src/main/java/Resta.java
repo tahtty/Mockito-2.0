@@ -8,8 +8,8 @@
  *
  * @author Carlos Leon
  */
-public class Resta {
-    public static int restar(int minuendo, int sustraendo){
+public class Resta implements OperacionResta{
+	public int restar (int 	a, int b){
         return 0;
     }
 }

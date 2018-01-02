@@ -8,6 +8,6 @@
  *
  * @author Carlos Leon
  */
-public interface Operacion {
-    public int operar(int operador1, int operador2);
+public interface OperacionResta {
+    public int restar (int a, int b);
 }

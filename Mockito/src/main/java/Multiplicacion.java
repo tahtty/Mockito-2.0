@@ -8,8 +8,8 @@
  *
  * @author Carlos Leon
  */
-public class Multiplicacion {
-    public static int multiplicar(int mulplicando, int multiplicador){
+public class Multiplicacion implements OperacionMultiplicacion{
+	public int multiplicar(int multiplicando, int multiplicador){
         
         return 0;
     }

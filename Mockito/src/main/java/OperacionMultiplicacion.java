@@ -8,8 +8,6 @@
  *
  * @author Carlos Leon
  */
-public class Suma implements OperacionSuma{
-	public int sumar (int a, int b){
-        return -2;
-    }
+public interface OperacionMultiplicacion {
+    public int multiplicar(int multiplicando, int multiplicador);
 }
