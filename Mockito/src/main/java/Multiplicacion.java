@@ -1,35 +1,48 @@
 
 
-public class Multiplicacion {
+public class Multiplicacion implements OperacionMultiplicacion{
 	
 	private int resultado;
+	private OperacionSuma suma;
+	private OperacionResta resta;
+	
+	public OperacionSuma getSuma() {
+        return suma;
+    }
+
+    public  void setSuma(OperacionSuma suma) {
+        this.suma = suma;
+    }
+
+    public OperacionResta getResta() {
+        return resta;
+    }
+
+    public void setResta(OperacionResta resta) {
+        this.resta = resta;
+    }
 	
 	public Multiplicacion() {
 		this.resultado=0;
 	}
 	
 	public int multiplicar(int multiplicando, int multiplicador) {
-		int temp;
-		if(multiplicador==0) {
-			this.resultado=0;
-			return this.resultado=0;
-		}
-		if(multiplicador<0) {
-			//suma.new Suma();
-			//resta=new Resta();
-			//multiplicador=resta.restar(0,multplicador);
-			for(int i=0;i<multiplicador;i++) {
-				//this.resultado=suma.sumar(this.resultado,multiplicando);
-			}
-			//this.resultado=resta.restar(0,this.resultado);
-
-		}
-		else {
-			for(int i=0;i<multiplicador;i++) {
-				//this.resultado=suma.sumar(this.resultado,multiplicando);
-			}
-		}
 		
+		boolean bandera;
+		int i;
+		
+		bandera=false;
+		
+		if(multiplicador<0) {
+			bandera=true;
+			multiplicador=resta.restar(0, multiplicador);
+		}
+		for(i=0;i<multiplicador;i++) {
+			this.resultado=suma.sumar(this.resultado, multiplicando);
+		}
+		if(bandera) {
+			this.resultado=resta.restar(0, this.resultado);
+		}
 		return this.resultado;
 	}
 	
