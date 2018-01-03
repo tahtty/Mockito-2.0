@@ -1,13 +1,29 @@
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.Before;
+import org.junit.Test;
+import static org.mockito.Mockito.*;
+import static org.junit.Assert.*;
 
 public class MultiplicacionTest {
+	
+	Multiplicacion tester = new Multiplicacion();
+	
+	@Before
+	public void setup() {
+		OperacionSuma suma =mock(OperacionSuma.class);
+		OperacionResta rest = mock(OperacionResta.class);
+		when(suma.sumar(0, -5)).thenReturn(-5);
+		when(rest.restar(0, -1)).thenReturn(1);
+		when(rest.restar(0, -5)).thenReturn(5);
+		tester.setSuma(suma);
+        tester.setResta(rest);
+	}
 
-	@Test
+	@Test//Prueba por nodos
 	  public void testMultiply() {
-	    Multiplicacion tester = new Multiplicacion();
-	    assertEquals("Multiplicar with multiplicador=0 and multiplicando=-2 must be 0", 0, tester.multiplicar(-2,0));
-	    assertEquals("Multiplicar with multiplicador=-5 and multiplicando=-2 must be 10", 10, tester.multiplicar(-2,-5));
+	    
+	    assertEquals("Multiplicar with multiplicador=-1 and multiplicando=-5 must be 5", 5, tester.multiplicar(-5,-1));
 	  }
 
 }
