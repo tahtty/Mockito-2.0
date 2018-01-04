@@ -7,7 +7,7 @@ public class FrontEndTest {
 	
 	@Before
 	public void setup() {
-		Suma suma = new Suma();
+		OperacionSuma suma =mock(OperacionSuma.class);
 		Resta rest = new Resta();
 		Multiplicacion multi =new Multiplicacion();
 		when(suma.sumar(3, 3)).thenReturn(6);
