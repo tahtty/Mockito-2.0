@@ -9,10 +9,16 @@ public class FrontEndTest {
 	public void setup() {
 		OperacionSuma suma =mock(OperacionSuma.class);
 		OperacionResta rest = mock(OperacionResta.class);
-		OperacionMultiplicacion multi =mock(OperacionMultiplicacion.class);
+		Multiplicacion multi =new Multiplicacion();
 		when(suma.sumar(3, 3)).thenReturn(6);
 		when(rest.restar(3, 3)).thenReturn(0);
-		when(multi.multiplicar(3, 3)).thenReturn(9);
+		//Mock para la multiplicación
+		when(suma.sumar(0, -5)).thenReturn(-5);
+		when(rest.restar(0, -1)).thenReturn(1);
+		when(rest.restar(0, -5)).thenReturn(5);
+		multi.setSuma(suma);
+		multi.setResta(rest);
+		
 		FrontEnd.setSuma(suma);
         FrontEnd.setResta(rest);
         FrontEnd.setMultiplicacion(multi);
@@ -25,7 +31,7 @@ public class FrontEndTest {
         assertFalse("Deberï¿½a saler falso",FrontEnd.isInRange(5,0,4));
         assertFalse("Deberï¿½a saler falso",FrontEnd.isInRange(0,0,4));
         assertEquals("Deberï¿½a ser 6",6,FrontEnd.calcular(1, 3, 3));
-        assertEquals("Deberï¿½a ser 9",9,FrontEnd.calcular(2, 3, 3));
+        assertEquals("Deberï¿½a ser 9",5,FrontEnd.calcular(2, -5, -1));
         assertEquals("Deberï¿½a ser 0",0,FrontEnd.calcular(3, 3, 3));
 	}
 
