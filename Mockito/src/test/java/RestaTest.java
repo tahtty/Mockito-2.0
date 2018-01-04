@@ -7,8 +7,7 @@ public class RestaTest {
 	Resta tester= new Resta();
 	@Before
 	public void setup() {
-		OperacionSuma suma =mock(OperacionSuma.class);
-		when(suma.sumar(5,-1)).thenReturn(4);
+		Suma suma = new Suma();
 		tester.setSuma(suma);
 	}
 	@Test
