@@ -11,16 +11,13 @@ public class MultiplicacionTest {
 	
 	@Before
 	public void setup() {
-		OperacionSuma suma =mock(OperacionSuma.class);
+		Suma suma = new Suma();
 		Resta rest = new Resta();
-		when(suma.sumar(0, -5)).thenReturn(-5);
 		
-		//Mock para resta
-		when(suma.sumar(0, 1)).thenReturn(1);
-		when(suma.sumar(0, 5)).thenReturn(5);
 		rest.setSuma(suma);
 		tester.setSuma(suma);
 		tester.setResta(rest);
+		
 	}
 
 	@Test//Prueba por nodos
