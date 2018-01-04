@@ -7,15 +7,21 @@ public class FrontEndTest {
 	
 	@Before
 	public void setup() {
-		OperacionSuma suma =mock(OperacionSuma.class);
-		OperacionResta rest = mock(OperacionResta.class);
+		Suma suma = new Suma();
+		Resta rest = new Resta();
 		Multiplicacion multi =new Multiplicacion();
 		when(suma.sumar(3, 3)).thenReturn(6);
-		when(rest.restar(3, 3)).thenReturn(0);
+		
 		//Mock para la multiplicación
 		when(suma.sumar(0, -5)).thenReturn(-5);
-		when(rest.restar(0, -1)).thenReturn(1);
-		when(rest.restar(0, -5)).thenReturn(5);
+		
+		//Mock para Resta
+		when(suma.sumar(3, -3)).thenReturn(0);
+		//Mock para Resta de multiplicacion
+		when(suma.sumar(0, 1)).thenReturn(1);
+		when(suma.sumar(0, 5)).thenReturn(5);
+		
+		rest.setSuma(suma);
 		multi.setSuma(suma);
 		multi.setResta(rest);
 		
