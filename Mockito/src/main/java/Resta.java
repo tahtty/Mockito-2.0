@@ -1,9 +1,13 @@
-import org.mockito.Mockito;
-
-public class Resta {
+public class Resta implements OperacionResta{
 	private int resultado;
+	private OperacionSuma suma;
+	public void setSuma(OperacionSuma sumar) {
+		this.suma = sumar;
+	}
 	public int restar (int 	a, int b)
 	{
-		return a-b;
+		b = b*-1;
+		this.resultado=this.suma.sumar(a, b);
+		return this.resultado;
 	}
 }
