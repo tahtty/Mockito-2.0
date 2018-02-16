@@ -22,6 +22,8 @@ public class Multiplicacion implements OperacionMultiplicacion{
 	
 	public Multiplicacion() {
 		this.resultado=0;
+		this.suma = new Suma();
+		this.resta = new Resta();
 	}
 	
 	public int multiplicar(int multiplicando, int multiplicador) {
