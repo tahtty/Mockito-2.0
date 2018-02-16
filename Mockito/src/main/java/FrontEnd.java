@@ -18,6 +18,10 @@ public class FrontEnd {
         public static void setResta(OperacionResta resta) {
             FrontEnd.resta = resta;
         }
+        
+        public static void setDivision(OperacionDivision divi) {
+            FrontEnd.division = divi;
+        }
 
 	public static void main(String[] args) {
             Scanner sc;
