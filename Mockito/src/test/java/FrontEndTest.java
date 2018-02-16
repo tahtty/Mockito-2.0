@@ -10,8 +10,8 @@ public class FrontEndTest {
 		Suma suma = new Suma();
 		Resta rest = new Resta();
 		Multiplicacion multi =new Multiplicacion();
-		OperacionDivision divi = mock(OperacionDivision.class);
-		when(divi.dividir(3, 3)).thenReturn("1/0");
+		//OperacionDivision divi = mock(OperacionDivision.class);
+		//when(divi.dividir(3, 3)).thenReturn("1/0");
 		rest.setSuma(suma);
 		multi.setSuma(suma);
 		multi.setResta(rest);
@@ -20,7 +20,7 @@ public class FrontEndTest {
 		FrontEnd.setSuma(suma);
         FrontEnd.setResta(rest);
         FrontEnd.setMultiplicacion(multi);
-        FrontEnd.setDivision(divi);
+        FrontEnd.setDivision(new Division());
 	}
 	@Test
 	public void test() {
